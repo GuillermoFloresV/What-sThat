@@ -6,11 +6,23 @@ What Is That!?
  <div class="container">
    <br>
    <h1>What is that!?</h1>
-   <p>Here is a list of sample images:</p>
+   <p>Here are some sample images you can try out: </p>
+   <select>
+         <option value="none">Make a selection</option>
+         <option value="36523127054_763afc5ed0_z">Canoeing in Amsterdam</option>
+         <option value="36909037971_884bd535b1_z">East Side Gallery</option>
+         <option value="35889114281_85553fed76_z">Quiet at dawn, Cabo San Lucas</option>
+         <option value="37246779151_f26641d17f_z">Rijksmuseum library</option>
+         <option value="36140096743_df8ef41874_z">Someday</option>
+         <option value="37198655640_b64940bd52_z">Spreetunnel</option>
+         <option value="cityGirl">Chroma Velocity</option>
+      </select>
+   <p>Or you can try your own images</p>
    <form action = "home.html" method="POST" enctype="multipart/form-data">
       <label for = "file">Choose a file</label>
       <input type="file" name="file1"/>
-      <input type="submit" value="Send"/>
    </form>
+   
+   <input type="submit" value="Send"/>
  </div>
  {% endblock %}

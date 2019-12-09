@@ -17,24 +17,9 @@ image_info = [
     "flickr_user" : "bdodane"
   },
   {
-    "id" : "34694102243_3370955cf9_z",
-    "title" : "Eastern",
-    "flickr_user" : "Sean Davis"
-  },
-  {
     "id" : "36909037971_884bd535b1_z",
     "title" : "East Side Gallery",
     "flickr_user" : "Pieter van der Velden"
-  },
-  {
-    "id" : "36604481574_c9f5817172_z",
-    "title" : "Lombardia, september 2017",
-    "flickr_user" : "Mónica Pinheiro"
-  },
-  {
-    "id" : "36885467710_124f3d1e5d_z",
-    "title" : "Palazzo Madama",
-    "flickr_user" : "Kevin Kimtis"
   },
   {
     "id" : "35889114281_85553fed76_z",
@@ -57,9 +42,9 @@ image_info = [
     "flickr_user" : "Jens-Olaf Walter"
   },
   {
-    "id" : "34944112220_de5c2684e7_z",
-    "title" : "View from our rental",
-    "flickr_user" : "Doug Finney"
+    "id" : "cityGirl",
+    "title" : "Chroma Velocity",
+    "flickr_user" : "City Girl"
   }
 ]
 
