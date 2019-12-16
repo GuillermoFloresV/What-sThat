@@ -1,5 +1,5 @@
 # What-sThat
-A project that allows the user to choose or upload and image, and returns the image with boxes around objects it recognizes.
+A project that allows the user to choose an image, and returns the image with boxes around objects it recognizes.
 
 
 -----------------------------
@@ -7,7 +7,7 @@ A project that allows the user to choose or upload and image, and returns the im
 
 The current MVP is here in the object_detection.py file:
 This file takes in a picture from your current working directory and then tries to find items inside of the picture.
-**NOTE: In order for this to work, you still need the file provided above inside of your current working directory
+**NOTE: In order for this to work, you still need the file provided on step #3 inside of your current working directory
 
 
 

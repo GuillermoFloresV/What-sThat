@@ -1,0 +1,3 @@
+Requirements:
+Python 3, tensorflow, image with a typical item in it, opencv, imageai, keras, python virtual environment
+
