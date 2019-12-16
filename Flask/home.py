@@ -57,50 +57,50 @@ image_info = [
     "flickr_user" : "City Girl"
   }
 ]
-def main_code():
-  #test image
-  inputted_image =  '37198655640_b64940bd52_z.jpg'
+#test image
+inputted_image =  '37198655640_b64940bd52_z.jpg'
 
-  execution_path = upload_folder
+execution_path = upload_folder
 
-  detector = ObjectDetection()
-  detector.setModelTypeAsRetinaNet()
-  detector.setModelPath(
-    os.path.join(
-      execution_path,
-      "resnet50_coco_best_v2.0.1.h5"))
-  detector.loadModel()
-  detections = detector.detectObjectsFromImage(
-    input_image=os.path.join(
-      execution_path, inputted_image), output_image_path=os.path.join(
-        execution_path, "new.jpg"))
+detector = ObjectDetection()
+detector.setModelTypeAsRetinaNet()
+detector.setModelPath(
+  os.path.join(
+    execution_path,
+    "resnet50_coco_best_v2.0.1.h5"))
+detector.loadModel()
+detections = detector.detectObjectsFromImage(
+  input_image=os.path.join(
+    execution_path, inputted_image), output_image_path=os.path.join(
+      execution_path, "new.jpg"))
 
-  # Maybe do a dictionary at the same time in order to count them and
-  # display to the user how many times it saw a certain item. (maybe make
-  # the text file downloadable as well as a download link of the extracted
-  # images)
-  list_of_items_found = []
-  percentage_probability_of_item = []
+# Maybe do a dictionary at the same time in order to count them and
+# display to the user how many times it saw a certain item. (maybe make
+# the text file downloadable as well as a download link of the extracted
+# images)
+list_of_items_found = []
+percentage_probability_of_item = []
 
-  for eachObject in detections:
-    list_of_items_found.append(eachObject["name"])
-    percentage_probability_of_item.append(eachObject["percentage_probability"])
+for eachObject in detections:
+  list_of_items_found.append(eachObject["name"])
+  percentage_probability_of_item.append(eachObject["percentage_probability"])
 
-  #makes everything into a dictionary in order for better user readability (give code better formatting with object and the object percentage probability)
-  my_dict = dict(zip(list_of_items_found, percentage_probability_of_item))
+#makes everything into a dictionary in order for better user readability (give code better formatting with object and the object percentage probability)
+my_dict = dict(zip(list_of_items_found, percentage_probability_of_item))
 
 
-  #if the length of items found is greater than 0, then print out the dictionary to the user, else, let them know that the script found nothing and the program ends.
-  if len(list_of_items_found) > 0:
-    print(my_dict)
-  else:
-    print("Sorry, we could not find any items in this picture. Please try another image.")
+#if the length of items found is greater than 0, then print out the dictionary to the user, else, let them know that the script found nothing and the program ends.
+if len(list_of_items_found) > 0:
+  print(my_dict)
+else:
+  print("Sorry, we could not find any items in this picture. Please try another image.")
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
 @app.route('/successfullySubmitted', methods=['POST'])
 def upload_picture():
+  """
   if request.method == "POST":
     if 'file' not in request.files:
       flash('No file part')
@@ -111,8 +111,17 @@ def upload_picture():
       flash('No selected file')
       return redirect(request.url)
       file.save(os.path.join(app.config['upload_folder'], filename))
-  return render_template('success.html', request.form['submittedImage',], inputted_image = inputted_image)
 
+      main_code(filename)
+  return render_template('success.html', request.form['submittedImage',], inputted_image = inputted_image)
+"""
+  if request.method=='GET':
+    return('<form action="/successfullySubmitted" method="post"><input type="submit" value="Send" /></form>')
+
+  elif request.method=='POST':
+    file1 = request.form.get(['file1'])
+  else:
+    return("ok")
 
 @app.route('/')
 def home():
